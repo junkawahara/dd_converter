@@ -10,13 +10,15 @@ int main() {
 
     IntRange range(2, 2); // size just 2
     SizeConstraint sc(3, range);
-    DdStructure<2> dd1(sc);
+    DdStructure<2> dd1(sc); // dd representing "3 choose 2"
 
-    //output_as_graphillion_text(std::cout, dd1);
+    // Output a ZDD in the graphillion format to std::cout
+    outputAsGraphillionText(std::cout, dd1);
 
+    // Construct a ZDD from std::cin
     DdStructure<2> dd2 = graphillionToTdZdd(std::cin);
 
-    //std::cerr << dd2.size();
+    // Output a ZDD in the graphillion format to std::cout
     outputAsGraphillionText(std::cout, dd2);
 
     return 0;
